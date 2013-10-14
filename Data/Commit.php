@@ -99,7 +99,7 @@ class Commit extends Base
         $post = array(
             'message' => $message,
             'tree' => $tree,
-            'parents' => join(',', $parents)
+            'parents' => $parents
         );
         
         // checks the authors
