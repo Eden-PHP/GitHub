@@ -1,0 +1,4 @@
+GitHub
+======
+
+Eden GitHub component
