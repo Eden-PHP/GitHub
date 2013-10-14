@@ -1,0 +1,25 @@
+{
+    "name": "eden/github",
+    "type": "library",
+    "description": "Designed for rapid prototyping, with less code.",
+    "keywords": ["eden", "library"],
+    "homepage": "http://eden-php.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ian Mark Muninio",
+            "email": "ianmuninio@openovate.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1",
+        "eden/core": "1.*",
+        "eden/curl": "1.*",
+        "eden/type": "1.*",
+        "eden/oauth": "1.*"
+    },
+    "autoload": {
+         "psr-2": { "Eden\\GitHub\\": "" }
+    },
+	"target-dir": "Eden/GitHub"
+}
