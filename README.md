@@ -1,4 +1,4 @@
 GitHub
-======
+========
 
-Eden GitHub component
+GitHub for Eden PHP Library
