@@ -286,7 +286,7 @@ class Repository extends Base
                 ->str_replace(':repo', $repo)
                 ->get();
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

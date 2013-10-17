@@ -42,6 +42,6 @@ class Comment extends Base
                 ->str_replace(':gist_id', $gistId)
                 ->get();
         
-        return $this->getResponse($link);
+        return $this->patchResponse($link);
     }
 }

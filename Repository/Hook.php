@@ -199,7 +199,7 @@ class Hook extends Base
         
         $link .= '/' . $hookId;
         
-        return $this->postResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

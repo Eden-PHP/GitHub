@@ -195,7 +195,7 @@ class PullRequest extends Base
                 ->str_replace(':number', $number)
                 ->get();
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

@@ -135,7 +135,7 @@ class Key extends Base
         
         $link .= '/' . $keyId;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

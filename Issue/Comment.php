@@ -161,7 +161,7 @@ class Comment extends Base
         
         $link .= '/' . $commentId;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

@@ -232,7 +232,7 @@ class ReviewComment extends Base
         
         $link .= '/' . $number;
         
-        return $this->postResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

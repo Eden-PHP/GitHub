@@ -295,6 +295,9 @@ class Issue extends Base
         if ($milestone) {
             $post['milestone'] = $milestone;
         }
+        if ($state) {
+            $post['state'] = $state;
+        }
         
         $link = StringType::i($this->link['REPO_ISSUE'])
                     ->str_replace(':owner', $owner)
@@ -302,7 +305,7 @@ class Issue extends Base
                     ->str_replace(':number', $number)
                     ->get();
                 
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

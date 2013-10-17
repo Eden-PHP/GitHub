@@ -10,6 +10,7 @@
 namespace Eden\GitHub;
 
 use Eden\Core\Base as CoreBase;
+use Eden\Curl\Base as Curl;
 
 /**
  * The base class for all classes wishing to integrate with Eden.
@@ -91,6 +92,23 @@ class Base extends CoreBase
     }
 
     /**
+     * Gets JSON reponse with PATCH method.
+     *
+     * @param string $link      [optional] the link
+     * @param array  $query     [optional] the query
+     * @return array
+     */
+    public function patchResponse($link = '', array $query = array())
+    {
+        Argument::i()
+                ->test(1, 'string')
+                ->test(2, 'array')
+                ->test(3, 'bool');
+        
+        return $this->getJSONResponse(Curl::PATCH, $link, $this->generateQuery($query));
+    }
+
+    /**
      * Gets JSON reponse with DELETE method.
      *
      * @param string $link      [optional] the link
@@ -158,6 +176,10 @@ class Base extends CoreBase
             case Curl::DELETE:
                 $url .= '?' . $query;
                 $curl->setCustomDelete(); // set method to delete
+                break;
+            case Curl::PATCH:
+                $curl->setPostFields($query); // set post fields
+                $curl->setCustomRequest('PATCH'); // set method to patch
                 break;
             case Curl::PUT:
                 $url .= '?' . $query;

@@ -116,7 +116,7 @@ class Label extends Base
         
         $link .= '/' . $name;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

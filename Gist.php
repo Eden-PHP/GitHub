@@ -196,7 +196,7 @@ class Search extends Base
                 ->str_replace(':id', $gistId)
                 ->get();
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

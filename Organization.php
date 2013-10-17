@@ -102,7 +102,7 @@ class Organization extends Base
                 ->str_replace(':org', $org)
                 ->get();
         
-        return $this->postResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

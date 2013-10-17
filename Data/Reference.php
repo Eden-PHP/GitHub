@@ -118,7 +118,7 @@ class Reference extends Base
                 ->get();
         $link .= '/' . $ref;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

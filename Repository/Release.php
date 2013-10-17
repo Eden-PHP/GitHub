@@ -141,6 +141,74 @@ class Release extends Base
     }
     
     /**
+     * Edits a release. Users with push access to the repository can create a release.
+     * 
+     * @param string      $owner
+     * @param string      $repo
+     * @param string      $tagName
+     * @param string|null $targetCommitish specifies the commitish value that determines where
+     *                                     the Git tag is created from. Can be any branch or
+     *                                     commit SHA. Defaults to the repository’s default branch
+     *                                     (usually “master”). Unused if the Git tag already exists
+     * @param string|null $name            (Optional)
+     * @param string|null $body            (Optional)
+     * @param bool        $draft           true - to create a draft (unpublished) release,
+     *                                     false - to create a published one. Default is false
+     * @param bool        $prerelease      true - to identify the release as a prerelease.
+     *                                     false - to identify the release as a full release
+     *                                     Default is false
+     * @return array
+     */
+    public function editRelease(
+            $owner,
+            $repo,
+            $id,
+            $tagName = null,
+            $targetCommitish = null,
+            $name = null,
+            $body = null,
+            $draft = false,
+            $prerelease = false
+    ) {
+        Argument::i()
+                ->test(1, 'string')
+                ->test(2, 'string')
+                ->test(3, 'string')
+                ->test(4, 'string', 'null')
+                ->test(5, 'string', 'null')
+                ->test(6, 'string', 'null')
+                ->test(7, 'bool')
+                ->test(8, 'bool');
+        
+        $post = array(
+            'tag_name' => $tagName,
+            'draft' => $draft,
+            'prerelease' => $prerelease
+        );
+        
+        // check and set
+        if ($targetCommitish) {
+            $post['target_commitish'] = $targetCommitish;
+        }
+        if ($name) {
+            $post['name'] = $name;
+        }
+        if ($body) {
+            $post['body'] = $body;
+        }
+        
+        // search and replace
+        $link = StringType::i($this->link['RELEASE'])
+                ->str_replace(':owner', $owner)
+                ->str_replace(':repo', $repo)
+                ->get();
+        
+        $link .= '/' . $id;
+        
+        return $this->patchResponse($link, $post);
+    }
+    
+    /**
      * Deletes a release.
      * 
      * @param string $owner
@@ -249,7 +317,7 @@ class Release extends Base
         
         $link .= '/' . $assetId;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

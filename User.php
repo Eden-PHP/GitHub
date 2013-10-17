@@ -130,7 +130,7 @@ class User extends Base
         $link = StringType::i($this->link['USER'])
                 ->get();
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

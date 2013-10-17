@@ -170,7 +170,7 @@ class Milestone extends Base
         
         $link .= '/' . $number;
         
-        return $this->putResponse($link, $post);
+        return $this->patchResponse($link, $post);
     }
     
     /**

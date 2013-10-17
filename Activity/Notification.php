@@ -131,7 +131,7 @@ class Notification extends Base
                 ->str_replace(':id', $id)
                 ->get();
         
-        return $this->putResponse($link);
+        return $this->patchResponse($link);
     }
     
     /**
