@@ -161,7 +161,7 @@ class Base extends CoreBase
                 ->test(3, 'array')
                 ->test(4, 'bool');
         
-        // get the instagram api url
+        // get the github api url
         $url = self::API_URL . $this->connection;
         $url .= '/' . $link;
 
@@ -197,7 +197,7 @@ class Base extends CoreBase
                 ->setFollowLocation(true) // sets the follow location to true
                 ->setTimeout(60) // set page timeout to 60 sec
                 ->verifyPeer(false) // verifying Peer must be boolean
-                ->setUserAgent(Auth::USER_AGENT) // set instagram USER_AGENT
+                ->setUserAgent(Auth::USER_AGENT) // set github USER_AGENT
                 ->setHeaders('Expect') // set headers to EXPECT
                 ->getJsonResponse(); // get the json response
 
