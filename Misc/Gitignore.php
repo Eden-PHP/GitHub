@@ -7,12 +7,13 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Data;
+namespace Eden\GitHub\Misc;
 
 use Eden\Type\StringType;
 
 /**
  * GitHub API - Miscellaneous: Gitignore
+ * The Gitignore API gives you access to the available gitignore templates.
  * 
  * @vendor Eden
  * @package GitHub\Misc

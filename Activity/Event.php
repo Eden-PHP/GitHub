@@ -14,6 +14,7 @@ use Eden\Type\StringType;
 
 /**
  * GitHub API - Activity: Event
+ * This is a read-only API of the events that power the various activity streams on GitHub.
  * 
  * @vendor Eden
  * @package GitHub\Activity

@@ -7,7 +7,7 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Data;
+namespace Eden\GitHub\Issue;
 
 use Eden\GitHub\Argument;
 use Eden\Type\StringType;

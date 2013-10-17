@@ -7,12 +7,13 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Data;
+namespace Eden\GitHub\Misc;
 
 use Eden\Type\StringType;
 
 /**
  * GitHub API - Miscellaneous: Markdown
+ * The Markdown API lets you render Markdown documents.
  * 
  * @vendor Eden
  * @package GitHub\Misc

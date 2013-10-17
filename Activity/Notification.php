@@ -14,6 +14,8 @@ use Eden\Type\StringType;
 
 /**
  * GitHub API - Activity: Notification
+ * Notifications of new comments are delivered to users.
+ * The Notifications API lets you view these notifications, and mark them as read.
  * 
  * @vendor Eden
  * @package GitHub\Activity

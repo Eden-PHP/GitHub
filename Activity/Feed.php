@@ -11,6 +11,7 @@ namespace Eden\GitHub\Activity;
 
 /**
  * GitHub API - Activity: Feed
+ * List of Atom feeds available for the authenticating user.
  * 
  * @vendor Eden
  * @package GitHub\Activity

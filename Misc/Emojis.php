@@ -7,12 +7,13 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Data;
+namespace Eden\GitHub\Misc;
 
 use Eden\Type\StringType;
 
 /**
  * GitHub API - Miscellaneous: Emojis
+ * The Emojis API lets you list all the emojis available to use on GitHub.
  * 
  * @vendor Eden
  * @package GitHub\Misc

@@ -14,6 +14,8 @@ use Eden\Type\StringType;
 
 /**
  * GitHub API - Activity: Watch
+ * Watching a Repository registers the user to receive notifications on new discussions,
+ * as well as events in the user’s activity feed.
  * 
  * @vendor Eden
  * @package GitHub\Activity

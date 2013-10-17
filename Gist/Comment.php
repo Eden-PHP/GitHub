@@ -14,6 +14,8 @@ use Eden\Type\StringType;
 
 /**
  * GitHub API - Gist: Comment
+ * You can read public gists and create them for anonymous users without a token;
+ * however, to read or write gists on a user’s behalf the gist OAuth scope is required.
  * 
  * @vendor Eden
  * @package GitHub\Data

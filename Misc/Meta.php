@@ -7,12 +7,13 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Data;
+namespace Eden\GitHub\Misc;
 
 use Eden\Type\StringType;
 
 /**
  * GitHub API - Miscellaneous: Meta
+ * The Meta API gives some information about GitHub.com, the service.
  * 
  * @vendor Eden
  * @package GitHub\Misc

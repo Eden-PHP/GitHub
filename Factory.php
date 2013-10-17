@@ -38,4 +38,104 @@ class Factory extends Base
 
         return Auth::i($key, $secret, $redirect);
     }
+    
+    /**
+     * Returns new instance of Activity.
+     * 
+     * @return \Eden\GitHub\Activity
+     */
+    public function activity()
+    {
+        return Activity::i();
+    }
+    
+    /**
+     * Returns new instance of Data.
+     * 
+     * @return \Eden\GitHub\Data
+     */
+    public function data()
+    {
+        return Data::i();
+    }
+    
+    /**
+     * Returns new instance of Gist.
+     * 
+     * @return \Eden\GitHub\Gist
+     */
+    public function gist()
+    {
+        return Gist::i();
+    }
+    
+    /**
+     * Returns new instance of Issue.
+     * 
+     * @return \Eden\GitHub\Issue
+     */
+    public function issue()
+    {
+        return Issue::i();
+    }
+    
+    /**
+     * Returns new instance of Misc.
+     * 
+     * @return \Eden\GitHub\Misc
+     */
+    public function misc()
+    {
+        return Misc::i();
+    }
+    
+    /**
+     * Returns new instance of Organization.
+     * 
+     * @return \Eden\GitHub\Misc
+     */
+    public function organization()
+    {
+        return Organization::i();
+    }
+    
+    /**
+     * Returns new instance of PullRequest.
+     * 
+     * @return \Eden\GitHub\PullRequest
+     */
+    public function pullRequest()
+    {
+        return PullRequest::i();
+    }
+    
+    /**
+     * Returns new instance of Repository.
+     * 
+     * @return \Eden\GitHub\Repository
+     */
+    public function repository()
+    {
+        return Repository::i();
+    }
+    
+    /**
+     * Returns new instance of User.
+     * 
+     * @return \Eden\GitHub\User
+     */
+    public function user()
+    {
+        return User::i();
+    }
+    
+    /**
+     * Returns new instance of Search.
+     * 
+     * @return \Eden\GitHub\Search
+     */
+    public function search()
+    {
+        return Search::i();
+    }
 }

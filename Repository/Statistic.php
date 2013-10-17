@@ -7,44 +7,43 @@
  * distributed with this package.
  */
 
-namespace Eden\GitHub\Activity;
+namespace Eden\GitHub\Repository;
 
 use Eden\GitHub\Argument;
 use Eden\Type\StringType;
 
 /**
- * GitHub API - Activity: Star
- * Repository Starring is a feature that lets users bookmark repositories.
- * Stars are shown next to repositories to show an approximate level of interest.
- * Stars have no effect on notifications or the activity feed.
+ * GitHub API - Repository: Statistic
  * 
  * @vendor Eden
- * @package GitHub\Activity
+ * @package GitHub\Repository
  * @author Ian Mark Muninio <ianmuninio@openovate.com>
  */
-class Star extends Base
+class Statistic extends Base
 {
     protected $link = array(
-        'STARGAZER' => 'repos/:owner/:repo/stargazers',
-        'USER_STARRED' => 'users/:user/starred',
-        'USER_STAR' => 'user/starred/:owner/:repo'
+        'CONTRIBUTORS' => 'repos/:owner/:repo/stats/contributors',
+        'COMMIT_ACTIVITY' => 'repos/:owner/:repo/stats/commit_activity',
+        'CODE_FREQUENCY' => 'repos/:owner/:repo/stats/code_frequency',
+        'PARTICIPATION' => 'repos/:owner/:repo/stats/participation',
+        'PUNCH_CARD' => 'repos/:owner/:repo/stats/punch_card',
     );
     
     /**
-     * Gets all the users who starred the repository.
+     * Lists the contributors.
      * 
      * @param string $owner
      * @param string $repo
      * @return array
      */
-    public function getRepoStargazers($owner, $repo)
+    public function getContributors($owner, $repo)
     {
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string');
         
         // search and replace
-        $link = StringType::i($this->link['STARGAZER'])
+        $link = StringType::i($this->link['CONTRIBUTORS'])
                 ->str_replace(':owner', $owner)
                 ->str_replace(':repo', $repo)
                 ->get();
@@ -53,54 +52,20 @@ class Star extends Base
     }
     
     /**
-     * List repositories being starred by a user.
-     * If user is defined, list repositories being starred by the authenticated user.
-     * 
-     * @param string $user
-     * @param string $sort      valid values are created and updated
-     * @param string $direction valid values are asc and desc
-     * @return array
-     */
-    public function getUserStarred($user = null, $sort = 'created', $direction = 'desc')
-    {
-        Argument::i()
-                ->test(1, 'string', 'null')
-                ->test(2, 'string')
-                ->test(3, 'string');
-        
-        $post = array(
-            'sort' => $sort,
-            'direction' => $direction
-        );
-        
-        // checks if user is not defined
-        if (!$user) {
-            $user = ''; // empty the user
-        }
-        
-        // search and replace
-        $link = StringType::i($this->link['USER_STARRED'])
-                ->str_replace(':user', $user)
-                ->get();
-        
-        return $this->getResponse($link, $post);
-    }
-    
-    /**
-     * Checks if you are a stargazer of the repository.
+     * Gets the last year of commit activity data.
      * 
      * @param string $owner
      * @param string $repo
      * @return array
      */
-    public function isStargazer($owner, $repo)
+    public function getCommitActivity($owner, $repo)
     {
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string');
         
         // search and replace
-        $link = StringType::i($this->link['USER_STAR'])
+        $link = StringType::i($this->link['COMMIT_ACTIVITY'])
                 ->str_replace(':owner', $owner)
                 ->str_replace(':repo', $repo)
                 ->get();
@@ -109,46 +74,68 @@ class Star extends Base
     }
     
     /**
-     * Stars the repository.
+     * Gets the number of additions and deletions per week.
      * 
      * @param string $owner
      * @param string $repo
      * @return array
      */
-    public function starRepository($owner, $repo)
+    public function getCodeFrequency($owner, $repo)
     {
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string');
         
         // search and replace
-        $link = StringType::i($this->link['USER_STAR'])
+        $link = StringType::i($this->link['CODE_FREQUENCY'])
                 ->str_replace(':owner', $owner)
                 ->str_replace(':repo', $repo)
                 ->get();
         
-        return $this->putResponse($link);
+        return $this->getResponse($link);
     }
     
     /**
-     * Unstars the repository.
+     * Gets the weekly commit count for the repo owner and everyone else.
      * 
      * @param string $owner
      * @param string $repo
      * @return array
      */
-    public function unstarRepository($owner, $repo)
+    public function getParticipations($owner, $repo)
     {
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string');
         
         // search and replace
-        $link = StringType::i($this->link['USER_STAR'])
+        $link = StringType::i($this->link['PARTICIPATION'])
                 ->str_replace(':owner', $owner)
                 ->str_replace(':repo', $repo)
                 ->get();
         
-        return $this->deleteResponse($link);
+        return $this->getResponse($link);
+    }
+    
+    /**
+     * Gets the number of commits per hour in each day.
+     * 
+     * @param string $owner
+     * @param string $repo
+     * @return array
+     */
+    public function getPunchCards($owner, $repo)
+    {
+        Argument::i()
+                ->test(1, 'string')
+                ->test(2, 'string');
+        
+        // search and replace
+        $link = StringType::i($this->link['PUNCH_CARD'])
+                ->str_replace(':owner', $owner)
+                ->str_replace(':repo', $repo)
+                ->get();
+        
+        return $this->getResponse($link);
     }
 }
