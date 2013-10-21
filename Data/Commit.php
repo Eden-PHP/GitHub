@@ -106,9 +106,11 @@ class Commit extends Base
         if ($authorName) {
             $post['author']['name'] = $authorName;
         }
+        
         if ($authorEmail) {
             $post['author']['email'] = $authorEmail;
         }
+        
         if ($authorDate) {
             $post['author']['date'] = $authorDate;
         }
@@ -117,9 +119,11 @@ class Commit extends Base
         if ($committerName) {
             $post['committer']['name'] = $committerName;
         }
+        
         if ($committerEmail) {
             $post['committer']['email'] = $committerEmail;
         }
+        
         if ($committerDate) {
             $post['committer']['date'] = $committerDate;
         }

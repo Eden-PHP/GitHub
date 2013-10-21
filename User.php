@@ -108,21 +108,27 @@ class User extends Base
         if ($name) {
             $post['name'] = $name;
         }
+        
         if ($email) {
             $post['email'] = $email;
         }
+        
         if ($blog) {
             $post['blog'] = $blog;
         }
+        
         if ($company) {
             $post['company'] = $company;
         }
+        
         if ($location) {
             $post['location'] = $location;
         }
+        
         if ($hireable) {
             $post['hireable'] = $hireable;
         }
+        
         if ($bio) {
             $post['bio'] = $bio;
         }

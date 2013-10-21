@@ -178,15 +178,19 @@ class Hook extends Base
         if ($active) {
             $post['active'] = $active;
         }
+        
         if (count($config)) {
             $post['config'] = $config;
         }
+        
         if (count($events)) {
             $post['events'] = $events;
         }
+        
         if (count($addEvents)) {
             $post['add_events'] = $addEvents;
         }
+        
         if (count($removeEvents)) {
             $post['remove_events'] = $removeEvents;
         }

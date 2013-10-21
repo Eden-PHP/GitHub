@@ -107,6 +107,7 @@ class Milestone extends Base
         if ($desc) {
             $post['description'] = $desc;
         }
+        
         if ($dueOn) {
             $post['due_on'] = $dueOn;
         }
@@ -158,6 +159,7 @@ class Milestone extends Base
         if ($desc) {
             $post['description'] = $desc;
         }
+        
         if ($dueOn) {
             $post['due_on'] = $dueOn;
         }

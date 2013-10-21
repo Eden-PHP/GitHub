@@ -124,9 +124,11 @@ class Release extends Base
         if ($targetCommitish) {
             $post['target_commitish'] = $targetCommitish;
         }
+        
         if ($name) {
             $post['name'] = $name;
         }
+        
         if ($body) {
             $post['body'] = $body;
         }
@@ -190,9 +192,11 @@ class Release extends Base
         if ($targetCommitish) {
             $post['target_commitish'] = $targetCommitish;
         }
+        
         if ($name) {
             $post['name'] = $name;
         }
+        
         if ($body) {
             $post['body'] = $body;
         }

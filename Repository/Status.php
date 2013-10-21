@@ -89,6 +89,7 @@ class Status extends Base
         if ($targetUrl) {
             $post['target_url'] = $targetUrl;
         }
+        
         if ($description) {
             $post['description'] = $description;
         }

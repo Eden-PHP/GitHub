@@ -51,8 +51,7 @@ class Base extends CoreBase
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'array')
-                ->test(3, 'bool');
+                ->test(2, 'array');
         
         return $this->getJSONResponse(Curl::GET, $link, $this->generateQuery($query));
     }
@@ -68,8 +67,7 @@ class Base extends CoreBase
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'array')
-                ->test(3, 'bool');
+                ->test(2, 'array');
         
         return $this->getJSONResponse(Curl::POST, $link, $this->generateQuery($query));
     }
@@ -85,8 +83,7 @@ class Base extends CoreBase
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'array')
-                ->test(3, 'bool');
+                ->test(2, 'array');
         
         return $this->getJSONResponse(Curl::PUT, $link, $this->generateQuery($query));
     }
@@ -102,8 +99,7 @@ class Base extends CoreBase
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'array')
-                ->test(3, 'bool');
+                ->test(2, 'array');
         
         return $this->getJSONResponse(Curl::PATCH, $link, $this->generateQuery($query));
     }
@@ -119,8 +115,7 @@ class Base extends CoreBase
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'array')
-                ->test(3, 'bool');
+                ->test(2, 'array');
         
         return $this->getJSONResponse(Curl::DELETE, $link, $this->generateQuery($query));
     }
@@ -158,8 +153,7 @@ class Base extends CoreBase
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string')
-                ->test(3, 'array')
-                ->test(4, 'bool');
+                ->test(3, 'array');
         
         // get the github api url
         $url = self::API_URL . $this->connection;

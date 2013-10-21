@@ -85,15 +85,19 @@ class Organization extends Base
         if ($billingEmail) {
             $post['billing_email'] = $billingEmail;
         }
+        
         if ($company) {
             $post['company'] = $company;
         }
+        
         if ($email) {
             $post['email'] = $email;
         }
+        
         if ($location) {
             $post['location'] = $location;
         }
+        
         if ($name) {
             $post['name'] = $name;
         }

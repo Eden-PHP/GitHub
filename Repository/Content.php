@@ -151,6 +151,7 @@ class Content extends Base
             $post['author']['name'] = $authorName;
             $post['author']['email'] = $authorEmail;
         }
+        
         if ($committerName) {
             $post['committer']['name'] = $committerName;
             $post['committer']['email'] = $committerEmail;
@@ -225,6 +226,7 @@ class Content extends Base
             $post['author']['name'] = $authorName;
             $post['author']['email'] = $authorEmail;
         }
+        
         if ($committerName) {
             $post['committer']['name'] = $committerName;
             $post['committer']['email'] = $committerEmail;
@@ -295,6 +297,7 @@ class Content extends Base
             $post['author']['name'] = $authorName;
             $post['author']['email'] = $authorEmail;
         }
+        
         if ($committerName) {
             $post['committer']['name'] = $committerName;
             $post['committer']['email'] = $committerEmail;

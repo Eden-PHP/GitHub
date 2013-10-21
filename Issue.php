@@ -60,7 +60,7 @@ class Issue extends Base
         Argument::i()
                 ->test(1, 'bool')
                 ->test(2, 'string', 'null')
-                ->test(3, 'string', 'null')
+                ->test(3, 'string')
                 ->test(4, 'string')
                 ->test(5, 'array')
                 ->test(6, 'string')
@@ -178,9 +178,11 @@ class Issue extends Base
         if ($creator) {
             $post['creator'] = $creator;
         }
+        
         if ($mentioned) {
             $post['mentioned'] = $mentioned;
         }
+        
         if ($since) {
             $post['since'] = $since;
         }
@@ -233,6 +235,7 @@ class Issue extends Base
         if ($assignee) {
             $post['assignee'] = $assignee;
         }
+        
         if ($milestone) {
             $post['milestone'] = $milestone;
         }
@@ -292,9 +295,11 @@ class Issue extends Base
         if ($assignee) {
             $post['assignee'] = $assignee;
         }
+        
         if ($milestone) {
             $post['milestone'] = $milestone;
         }
+        
         if ($state) {
             $post['state'] = $state;
         }

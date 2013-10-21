@@ -54,9 +54,7 @@ class PullRequest extends Base
                 ->test(4, 'string', 'null')
                 ->test(5, 'string', 'null');
         
-        $post = array(
-            'state' => $state
-        );
+        $post = array('state' => $state);
         
         // check and set
         if ($head) {
@@ -152,9 +150,9 @@ class PullRequest extends Base
     /**
      * Updates the existing pull request.
      * 
-     * @param string|null $owner
-     * @param string|null $repo
-     * @param string|null $number
+     * @param string      $owner
+     * @param string      $repo
+     * @param string      $number
      * @param string|null $title
      * @param string|null $body
      * @param string|null $state  open or closed
@@ -171,10 +169,10 @@ class PullRequest extends Base
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string')
-                ->test(3, 'string', 'null')
-                ->test(4, 'string')
-                ->test(5, 'string')
-                ->test(6, 'string');
+                ->test(3, 'string')
+                ->test(4, 'string', 'null')
+                ->test(5, 'string', 'null')
+                ->test(6, 'string', 'null');
         
         $post = array();
         
@@ -182,9 +180,11 @@ class PullRequest extends Base
         if ($title) {
             $post['title'] = $title;
         }
+        
         if ($body) {
             $post['body'] = $body;
         }
+        
         if ($state) {
             $post['state'] = $state;
         }

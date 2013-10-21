@@ -64,15 +64,19 @@ class Commit extends Base
         if ($sha) {
             $post['sha'] = $sha;
         }
+        
         if ($path) {
             $post['path'] = $path;
         }
+        
         if ($author) {
             $post['author'] = $author;
         }
+        
         if ($since) {
             $post['since'] = $since;
         }
+        
         if ($until) {
             $post['until'] = $until;
         }

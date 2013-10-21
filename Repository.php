@@ -181,6 +181,7 @@ class Repository extends Base
         if ($homepage) {
             $post['homepage'] = $homepage;
         }
+        
         if ($teamId) {
             $post['team_id'] = $teamId;
         }
@@ -271,12 +272,15 @@ class Repository extends Base
         if ($homepage) {
             $post['homepage'] = $homepage;
         }
+        
         if (!is_null($private)) {
             $post['private'] = $private;
         }
+        
         if ($defaultBranch) {
             $post['default_branch'] = $defaultBranch;
         }
+        
         if ($description) {
             $post['description'] = $description;
         }

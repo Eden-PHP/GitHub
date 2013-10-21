@@ -43,7 +43,7 @@ class Search extends Base
     public function getGists($user = null, $since = null)
     {
         Argument::i()
-                ->test(1, 'string')
+                ->test(1, 'string', 'null')
                 ->test(2, 'string', 'null');
         
         $post = array();
@@ -176,6 +176,7 @@ class Search extends Base
         Argument::i()
                 ->test(1, 'string', 'null')
                 ->test(2, 'string', 'null')
+                ->test(3, 'string', 'null')
                 ->test(4, 'array', 'null');
         
         $post = array();
@@ -184,9 +185,11 @@ class Search extends Base
         if ($content) {
             $post['content'] = $content;
         }
+        
         if ($description) {
             $post['description'] = $description;
         }
+        
         if ($files) {
             $post['files'] = $files;
         }

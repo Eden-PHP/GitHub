@@ -98,6 +98,7 @@ class Comment extends Base
         if ($path) {
             $post['path'] = $path;
         }
+        
         if ($position) {
             $post['position'] = $position;
         }
