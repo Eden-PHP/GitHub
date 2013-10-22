@@ -261,7 +261,6 @@ class Issue extends Base
      * @param string|int|null $milestone
      * @param array           $labels
      * @return array
-     * @return array
      */
     public function editIssue(
             $owner,
