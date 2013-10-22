@@ -60,6 +60,7 @@ class PullRequest extends Base
         if ($head) {
             $post['head'] = $head;
         }
+        
         if ($base) {
             $post['base'] = $base;
         }
