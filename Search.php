@@ -41,7 +41,7 @@ class Search extends Base
         Argument::i()
                 ->test(1, 'array', 'string')
                 ->test(2, 'string', 'null')
-                ->test(3, 'string', 'null');
+                ->test(3, 'string');
         
         $post = array(
             'q' => $query,
@@ -73,7 +73,7 @@ class Search extends Base
         Argument::i()
                 ->test(1, 'array', 'string')
                 ->test(2, 'string', 'null')
-                ->test(3, 'string', 'null');
+                ->test(3, 'string');
         
         $post = array(
             'q' => $query,
@@ -105,7 +105,7 @@ class Search extends Base
         Argument::i()
                 ->test(1, 'array', 'string')
                 ->test(2, 'string', 'null')
-                ->test(3, 'string', 'null');
+                ->test(3, 'string');
         
         $post = array(
             'q' => $query,
@@ -137,7 +137,7 @@ class Search extends Base
         Argument::i()
                 ->test(1, 'array', 'string')
                 ->test(2, 'string', 'null')
-                ->test(3, 'string', 'null');
+                ->test(3, 'string');
         
         $post = array(
             'q' => $query,

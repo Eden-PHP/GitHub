@@ -73,7 +73,7 @@ class Comment extends Base
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string')
-                ->test(3, 'string')
+                ->test(3, 'string', 'null')
                 ->test(4, 'string')
                 ->test(5, 'string')
                 ->test(6, 'string', 'null');

@@ -52,11 +52,11 @@ class Commit extends Base
         Argument::i()
                 ->test(1, 'string')
                 ->test(2, 'string')
-                ->test(3, 'string')
-                ->test(4, 'string')
-                ->test(5, 'string')
-                ->test(6, 'string')
-                ->test(7, 'string');
+                ->test(3, 'string', 'null')
+                ->test(4, 'string', 'null')
+                ->test(5, 'string', 'null')
+                ->test(6, 'string', 'null')
+                ->test(7, 'string', 'null');
         
         $post = array();
         

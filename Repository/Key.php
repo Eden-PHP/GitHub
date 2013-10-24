@@ -109,6 +109,7 @@ class Key extends Base
      * 
      * @param string $owner
      * @param string $repo
+     * @param string $keyId
      * @param string $title
      * @param string $key
      * @return array

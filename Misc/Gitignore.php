@@ -9,6 +9,7 @@
 
 namespace Eden\GitHub\Misc;
 
+use Eden\GitHub\Argument;
 use Eden\Type\StringType;
 
 /**
@@ -34,6 +35,8 @@ class Gitignore extends Base
      */
     public function getTemplates($template = null)
     {
+        Argument::i()->test(1, 'string', 'null');
+                
         // search and replace
         $link = StringType::i($this->link['TEMPLATE'])
                 ->get();

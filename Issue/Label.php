@@ -31,8 +31,8 @@ class Label extends Base
      * Gets the list of labels of the repository.
      * If name is defined, get the single result instread.
      * 
-     * @param string $owner
-     * @param string $repo
+     * @param string      $owner
+     * @param string      $repo
      * @param string|null $name
      * @return array
      */
@@ -69,7 +69,9 @@ class Label extends Base
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'string');
+                ->test(2, 'string')
+                ->test(3, 'string')
+                ->test(4, 'string');
         
         $post = array(
             'name' => $name,
@@ -101,7 +103,8 @@ class Label extends Base
                 ->test(1, 'string')
                 ->test(2, 'string')
                 ->test(3, 'string')
-                ->test(4, 'string');
+                ->test(4, 'string')
+                ->test(5, 'string');
         
         $post = array(
             'name' => $newName,

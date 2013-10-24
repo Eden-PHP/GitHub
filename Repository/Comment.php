@@ -39,7 +39,8 @@ class Comment extends Base
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'string');
+                ->test(2, 'string')
+                ->test(3, 'string', 'null');
         
         // set the $link based on $sha initial value
         if ($sha) {

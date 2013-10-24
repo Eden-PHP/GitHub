@@ -90,7 +90,7 @@ class Follower extends Base
     {
         Argument::i()
                 ->test(1, 'string')
-                ->test(2, 'string');
+                ->test(2, 'string', 'null');
         
         // search and replace
         if ($user) {

@@ -75,12 +75,12 @@ class Milestone extends Base
     /**
      * Creates a milestone.
      * 
-     * @param string $owner
-     * @param string $repo
-     * @param string $title
-     * @param string $state open or closed. Default is open
-     * @param string $desc  (Optional)
-     * @param string $dueOn (Optional) <ISO 8601> format
+     * @param string      $owner
+     * @param string      $repo
+     * @param string      $title
+     * @param string      $state open or closed. Default is open
+     * @param string|null $desc  (Optional)
+     * @param string|null $dueOn (Optional) <ISO 8601> format
      * @return array
      */
     public function createMilestone(
@@ -124,13 +124,13 @@ class Milestone extends Base
     /**
      * Updates a milestone.
      * 
-     * @param string $owner
-     * @param string $repo
-     * @param string number
-     * @param string $title
-     * @param string $state open or closed. Default is open
-     * @param string $desc  (Optional)
-     * @param string $dueOn (Optional) <ISO 8601> format
+     * @param string      $owner
+     * @param string      $repo
+     * @param string      number
+     * @param string      $title
+     * @param string      $state open or closed. Default is open
+     * @param string|null $desc  (Optional)
+     * @param string|null $dueOn (Optional) <ISO 8601> format
      * @return array
      */
     public function updateMilestone(

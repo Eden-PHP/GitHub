@@ -56,9 +56,9 @@ class Star extends Base
      * List repositories being starred by a user.
      * If user is defined, list repositories being starred by the authenticated user.
      * 
-     * @param string $user
-     * @param string $sort      valid values are created and updated
-     * @param string $direction valid values are asc and desc
+     * @param string|null $user
+     * @param string      $sort      valid values are created and updated
+     * @param string      $direction valid values are asc and desc
      * @return array
      */
     public function getUserStarred($user = null, $sort = 'created', $direction = 'desc')

@@ -331,7 +331,7 @@ class Content extends Base
                 ->test(1, 'string')
                 ->test(2, 'string')
                 ->test(3, 'string')
-                ->test(4, 'string', 'null');
+                ->test(4, 'string');
         
         // search and replace
         $link = StringType::i($this->link['ARCHIVE'])

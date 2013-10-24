@@ -116,7 +116,7 @@ class Event extends Base
      * Otherwise, you’ll only see public events.
      * 
      * @param string $user
-     * @param bool   $public
+     * @param bool   $public Default: false
      * @return array
      */
     public function getReceivedEvents($user, $public = false)
@@ -138,7 +138,7 @@ class Event extends Base
      * you will see your private events. Otherwise, you’ll only see public events.
      * 
      * @param string $user
-     * @param bool   $public
+     * @param bool   $public Default: false
      * @return array
      */
     public function getUserEvents($user, $public = false)

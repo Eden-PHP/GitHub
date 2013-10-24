@@ -47,7 +47,7 @@ class Hook extends Base
     /**
      * Lists all the hooks of a repository.
      * 
-     * @param HOOK $owner
+     * @param string $owner
      * @param string $repo
      * @return array
      */
@@ -233,6 +233,14 @@ class Hook extends Base
         return $this->getResponse($link);
     }
     
+    /**
+     * Deletes repository hook.
+     * 
+     * @param string $owner
+     * @param string $repo
+     * @param string $hookId
+     * @return array
+     */
     public function deleteHook($owner, $repo, $hookId)
     {
         Argument::i()

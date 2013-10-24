@@ -51,9 +51,10 @@ class Repository extends Base
      * Lists all user's repositories. If user is not defined, lists all the repositories
      * of the authenticated user.
      * 
-     * @param string $type      Default: all. all, owner, public, private or member
-     * @param string $sort      Default: full_name. create, updated, pushed or full_name
-     * @param string $direction Default: desc. asc or desc
+     * @param string|null $user
+     * @param string      $type      Default: all. all, owner, public, private or member
+     * @param string      $sort      Default: full_name. create, updated, pushed or full_name
+     * @param string      $direction Default: desc. asc or desc
      * @return array
      */
     public function getRepositories(
@@ -112,10 +113,9 @@ class Repository extends Base
      * Lists all the public repositories. This provides a dump of every public
      * repository, in the order that they were created.
      * 
-     * @param string $since
      * @return array
      */
-    public function getPublicRepositories($since)
+    public function getPublicRepositories()
     {
         Argument::i()->test(1, 'string');
         
@@ -163,7 +163,7 @@ class Repository extends Base
                 ->test(6, 'bool')
                 ->test(7, 'bool')
                 ->test(8, 'bool')
-                ->test(9, 'string', 'null')
+                ->test(9, 'string', 'int', 'null')
                 ->test(10, 'bool')
                 ->test(11, 'string', 'null');
         
@@ -298,7 +298,7 @@ class Repository extends Base
      * 
      * @param string $owner
      * @param string $repo
-     * @param bool $anon    Default: false. Includes anonymous contributors
+     * @param bool   $anon  Default: false. Includes anonymous contributors
      * @return array
      */
     public function getContributors($owner, $repo, $anon = false)
